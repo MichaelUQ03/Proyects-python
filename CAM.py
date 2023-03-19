@@ -2,19 +2,19 @@
 
 class CAM: #Crear una clase para una calculadora
 
+    def __init__(self):
+        self.result = None
+        self.operation = None
+        self.numbers = None
+
     def get_number(self): #Definir una funcion que guardara varios numeros
         try: #no permitir que el usuario ingrese letras
-            #Se podran ingresar varios numeros y se guardaran en una lista
-            self.numbers = input("Ingrese los numeros que desea operar separados por coma: ").split(",")
+            self.numbers = input("Ingrese los numeros que desea operar separados por coma: ").split(",") #Se podran ingresar varios numeros y se guardaran en una lista
             for i in range(len(self.numbers)): #Recorrer la lista
                 self.numbers[i] = int(self.numbers[i]) #Convertir los numeros de la lista a enteros
-
         except ValueError: #Si el usuario ingresa letras
             print("Solo se permiten numeros") #Mostrar un mensaje de error
             self.get_number() #Volver a pedir los numeros
-        except:
-            print("Error desconocido")
-            self.get_number()
 
     def get_operation(self): #Definir una funcion que guardara la operacion
         try: #no permitir que el usuario ingrese letras
@@ -33,9 +33,6 @@ class CAM: #Crear una clase para una calculadora
         except ValueError: #Si el usuario ingresa letras
             print("Solo se permiten numeros") #Mostrar un mensaje de error
             self.get_operation() #Volver a pedir la operacion
-        except:
-            print("Error desconocido")
-            self.get_operation()
 
     def calculate(self): #Definir una funcion que calculara la operacion
         try: #no permitir que el usuario ingrese letras
@@ -61,9 +58,6 @@ class CAM: #Crear una clase para una calculadora
         except ValueError: #Si el usuario ingresa letras
             print("Solo se permiten numeros") #Mostrar un mensaje de error
             self.get_operation() #Volver a pedir la operacion
-        except:
-            print("Error desconocido")
-            self.get_operation()
 
     def show_result(self): #Definir una funcion que mostrara el resultado
         print("El resultado es: " + str(self.result)) #Mostrar el resultado
