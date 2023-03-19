@@ -74,4 +74,4 @@ class CAM: #Crear una clase para una calculadora
         self.calculate() #Calcular la operacion
         self.show_result() #Mostrar el resultado
 
-CAM().run()
+CAM().run() #se ejecuta la clase
